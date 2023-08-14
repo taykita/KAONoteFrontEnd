@@ -20,22 +20,17 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
 <main class="form-signin w-100 m-auto">
-    <form th:action="@{/login}" method="post">
-        <div><label> User Name : <input type="text" name="username"/> </label></div>
-        <div><label> Password: <input type="password" name="password"/> </label></div>
-        <div><input type="submit" value="Sign In"/></div>
-    </form>
-    <form th:action="@{/login}" method="post">
+    <form th:action="@{/login/process}" method="post">
         <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
 
-<!--        <div class="form-floating">-->
-<!--            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">-->
-<!--            <label for="floatingInput">Email address</label>-->
-<!--        </div>-->
-<!--        <div class="form-floating">-->
-<!--            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">-->
-<!--            <label for="floatingPassword">Password</label>-->
-<!--        </div>-->
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+        </div>
 
 
         <div class="form-check text-start my-3 ms-1">

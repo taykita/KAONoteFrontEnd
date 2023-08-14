@@ -47,11 +47,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/", "/signup", "/css/**").permitAll()
+                        .requestMatchers("/", "/signup", "/css/**", "static/css/**").permitAll()
                         .anyRequest().authenticated())
                 .formLogin((form) -> form
-                        .loginPage("/login").permitAll().successForwardUrl("/"))
-                .logout((logout) -> logout.permitAll().logoutSuccessUrl("/"))
+                        .loginPage("/login").permitAll()
+                        .loginProcessingUrl("/login/process").permitAll()
+                        .defaultSuccessUrl("/", true).permitAll())
+                .logout((logout) -> logout.
+                        logoutUrl("/logout").clearAuthentication(true).permitAll()
+                        .logoutSuccessUrl("/login").permitAll())
                 .build();
     }
 
