@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NoteBook example">
+    <meta name="author" content="Artem Korovkin">
+    <title>Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+<body>
+<nav class="py-2 bg-body-tertiary border-bottom">
+    <div class="container d-flex flex-wrap">
+        <ul class="nav me-auto">
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2 active"
+                                    aria-current="page">Home</a>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">About</a></li>
+        </ul>
+        <ul class="nav">
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Login</a></li>
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Sign up</a></li>
+        </ul>
+    </div>
+</nav>
+<header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+        <a href="/"
+           class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4">KAO Note</span>
+        </a>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+    </div>
+</header>
+<div class="row col-9">
+    <div class="container-fluid pb-3 ps-5 pe-3">
+        <div class="d-grid gap-3 pb-3" style="grid-template-columns: 1fr 1fr;">
+            <div class="bg-body-tertiary border rounded-3">
+                <div class="ps-3 pt-2">Recent notes</div>
+                <hr>
+            </div>
+            <div class="bg-body-tertiary border rounded-3">
+                <div class="ps-3 pt-2">Recent created notes</div>
+                <hr>
+            </div>
+        </div>
+        <div class="bg-body-tertiary border rounded-3">
+            <div class="ps-3 pt-2">Latest features</div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
