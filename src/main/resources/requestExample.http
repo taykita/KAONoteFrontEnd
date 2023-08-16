@@ -1,0 +1,9 @@
+###
+POST http://{{url}}/http
+Content-Type: application/json
+
+{
+  "path" : "/account/admin@admin",
+  "method" : "GET"
+}
+###

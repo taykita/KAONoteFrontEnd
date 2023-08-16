@@ -20,6 +20,4 @@ public class MainPageController {
                 SecurityUtil.isNotAnonymous(context));
         return "main";
     }
-
-
 }

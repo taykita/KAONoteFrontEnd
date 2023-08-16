@@ -1,22 +1,21 @@
-package ru.kao.kaonotefrontend.configuration;
+package ru.kao.kaonotefrontend.configuration.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import ru.kao.kaonotefrontend.service.GatewayClient;
 
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
-//    @Bean
+    //    @Bean
 //    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 //        http
 //                .authorizeHttpRequests((requests) -> requests
@@ -60,19 +59,20 @@ public class SecurityConfig {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    @Profile("PROD")
+    public PasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails user =
-                User
-                        .withUsername("qwe@qwe")
-                        .password(passwordEncoder.encode("password"))
-                        .roles("USER")
-                        .build();
+    @Profile("DEV")
+    public PasswordEncoder noOpPasswordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
+    }
 
-        return new InMemoryUserDetailsManager(user);
+
+    @Bean
+    public UserDetailsService userDetailsService(GatewayClient gatewayClient) {
+        return new AccountDetailsService(gatewayClient);
     }
 }
