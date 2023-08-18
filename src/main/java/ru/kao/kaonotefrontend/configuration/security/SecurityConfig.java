@@ -10,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import ru.kao.kaonotefrontend.service.GatewayClient;
+import ru.kao.kaonotefrontend.integration.GatewayClient;
 
 @EnableWebSecurity
 @Configuration
@@ -46,7 +46,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/", "/signup", "/css/**", "static/css/**").permitAll()
+                        .requestMatchers("/", "/signup", "/registration", "/css/**", "static/css/**").permitAll()
                         .anyRequest().authenticated())
                 .formLogin((form) -> form
                         .loginPage("/login").permitAll()

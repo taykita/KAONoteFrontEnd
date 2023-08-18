@@ -1,3 +1,22 @@
+html,
+body {
+    height: 100%;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+
+.form-signup {
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -66,37 +85,7 @@
     --bs-btn-active-bg: #1E6D74;
     --bs-btn-active-border-color: #1E6D74;
 }
+
 .bd-mode-toggle {
     z-index: 1500;
-}
-
-.form-control {
-    border-color: var(--bs-gray);
-}
-.form-control:focus {
-    border-color: #5EC4CD;
-    box-shadow: 0 0 0 .25rem #5EC4CD;
-}
-
-.text-small {
-    font-size: 85%;
-}
-
-.dropdown-toggle:not(:focus) {
-    outline: 0;
-}
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 1px;
-    border-top: 1px solid #5EC4CD;
-}
-.note {
-    --bs-border-color: rgb(137, 201, 206);
-    background-color: #d1ebee;
-    border-radius: 10px;
-}
-
-.border {
-    border-radius: 10px;
 }

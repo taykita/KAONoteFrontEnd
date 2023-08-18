@@ -7,3 +7,13 @@ Content-Type: application/json
   "method" : "GET"
 }
 ###
+
+###
+POST http://{{url}}/http
+Content-Type: application/json
+
+{
+  "path" : "/account/exists/admin@admin",
+  "method" : "GET"
+}
+###

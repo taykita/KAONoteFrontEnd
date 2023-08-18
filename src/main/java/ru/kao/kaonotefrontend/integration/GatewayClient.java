@@ -1,6 +1,5 @@
-package ru.kao.kaonotefrontend.service;
+package ru.kao.kaonotefrontend.integration;
 
-import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
@@ -8,14 +7,10 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import ru.kao.kaonotefrontend.util.RestUtil;
 
-import java.io.Serializable;
-import java.util.Queue;
-
-@Service
+@Component
 public class GatewayClient {
     private final RestTemplate delegate;
     private final String RESOURCE_URL;
