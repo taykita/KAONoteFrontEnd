@@ -34,7 +34,7 @@
                 <li class="nav-item"><input class="nav-link link-body-emphasis px-2" type="submit" value="Logout"/></li>
             </form>
             <li th:unless="${isAuthenticated}" class="nav-item"><a href="/login" class="nav-link link-body-emphasis px-2">Login</a></li>
-            <li th:unless="${isAuthenticated}" class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Sign up</a></li>
+            <li th:unless="${isAuthenticated}" class="nav-item"><a href="/registration" class="nav-link link-body-emphasis px-2">Sign up</a></li>
         </ul>
     </div>
 </nav>

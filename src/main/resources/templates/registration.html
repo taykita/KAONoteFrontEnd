@@ -25,27 +25,34 @@
         <h1 class="h3 mb-3 fw-normal text-center">Please sign up</h1>
 
         <div class="form-floating">
-            <input th:field="${account.email}" type="email" class="form-control form-signup" id="floatingEmail" placeholder="name@example.com" name="email">
+            <input th:field="${account.email}" type="email" class="form-control form-signup" id="floatingEmail" placeholder="name@example.com" name="email" required>
             <label for="floatingEmail">Email address</label>
         </div>
         <div class="form-floating">
-            <input th:field="${account.firstName}" class="form-control form-signup" id="floatingFirstName" placeholder="Ivan" name="firstname">
+            <input th:field="${account.firstName}" class="form-control form-signup" id="floatingFirstName" placeholder="Ivan" name="firstname" required>
             <label for="floatingFirstName">First name</label>
         </div>
         <div class="form-floating">
-            <input th:field="${account.lastName}" class="form-control form-signup" id="floatingLastName" placeholder="Ivanov" name="lastname">
+            <input th:field="${account.lastName}" class="form-control form-signup" id="floatingLastName" placeholder="Ivanov" name="lastname" required>
             <label for="floatingLastName">Last name</label>
         </div>
         <div class="form-floating">
-            <input th:field="${account.password}" type="password" class="form-control form-signup" id="floatingPassword" placeholder="Password" name="password">
-            <label for="floatingPassword">Password</label>
+            <input th:field="${account.password}" type="password" class="form-control form-signup" id="floatingPassword" placeholder="Password" name="password" required>
+            <label for="floatingPassword" >Password</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control form-signup" id="floatingConfirmPassword" placeholder="Password" name="confirmPassword">
+            <input type="password" class="form-control form-signup" id="floatingConfirmPassword" placeholder="Password" name="confirmPassword" required>
             <label for="floatingConfirmPassword">Confirm password</label>
         </div>
 
         <button class="btn btn-bd-primary w-100 py-2" type="submit">Sign up</button>
+
+        <div class="text-start my-3">
+            <a href="/login" class="nav-link link-body-emphasis px-2">
+                Do you already have an account?
+            </a>
+        </div>
+
         <p class="mt-5 mb-3 text-body-secondary text-center">&copy; 2023–2023</p>
     </form>
 </main>

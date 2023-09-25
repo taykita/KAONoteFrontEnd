@@ -1,5 +1,6 @@
 package ru.kao.kaonotefrontend.controller;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,10 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import ru.kao.kaonotefrontend.configuration.security.AccountDetailsService;
 import ru.kao.kaonotefrontend.entity.Account;
 import ru.kao.kaonotefrontend.service.AuthService;
+import ru.kao.kaonotefrontend.util.LoggerUtil;
 import ru.kao.kaonotefrontend.util.SecurityUtil;
 
 @Controller
@@ -20,6 +21,8 @@ public class AuthController {
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
+
+    private static Logger logger = LoggerUtil.getLogger(AuthController.class);
 
     private final AuthService authService;
 
@@ -58,10 +61,14 @@ public class AuthController {
      */
     @PostMapping("/registration")
     public String registration(@ModelAttribute("account") Account account) throws JSONException {
+        logger.debug("Start registration with email = {}", account.getEmail());
         boolean isAccountCreated = authService.createAccount(account);
-        if (isAccountCreated)
+        if (isAccountCreated) {
+            logger.debug("Account is created with email = {}", account.getEmail());
             return "redirect:/login";
-        else
+        } else {
+            logger.debug("Account with email = {} is not created. Redirecting with error.", account.getEmail());
             return "redirect:/registration?error=not-created";
+        }
     }
 }
