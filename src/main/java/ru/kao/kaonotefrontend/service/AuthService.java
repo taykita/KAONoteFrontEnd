@@ -26,7 +26,7 @@ public class AuthService {
 
     public boolean createAccount(Account account) throws JSONException {
         logger.debug("Check account exist. Name of the email to be checked = {}", account.getEmail());
-        JSONObject checkEmailResponse = gatewayClient.executeHttpSend(
+        JSONObject checkEmailResponse = gatewayClient.send(
                 JSONUtil.createJSONForGateway("/account/exists/" + account.getEmail(), "GET"));
         boolean emailExists = checkEmailResponse.getBoolean("message");
         if (!emailExists) {
@@ -41,7 +41,7 @@ public class AuthService {
                     new ImmutablePair<>("isLocked", false),
                     new ImmutablePair<>("isCredentialsExpired", false),
                     new ImmutablePair<>("isEnabled", true));
-            JSONObject responseJSON = gatewayClient.executeHttpSend(createAccountJSON);
+            JSONObject responseJSON = gatewayClient.send(createAccountJSON);
             int id = responseJSON.getJSONObject("message").optInt("id");
             logger.debug("Receive response from registration request. Message - {}", responseJSON);
             return id > 0;

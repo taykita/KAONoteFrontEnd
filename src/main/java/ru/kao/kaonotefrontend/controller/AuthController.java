@@ -28,8 +28,10 @@ public class AuthController {
 
     @GetMapping("/login")
     public String loginPage() {
-        if (SecurityUtil.isNotAnonymous(SecurityContextHolder.getContext()))
+        if (SecurityUtil.isNotAnonymous(SecurityContextHolder.getContext())) {
+            logger.debug("Account is not anonymous. Redirect");
             return "redirect:/";
+        }
 
         return "login";
     }

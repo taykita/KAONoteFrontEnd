@@ -26,7 +26,7 @@ public class AccountDetailsService implements UserDetailsService {
         try {
             JSONObject body = JSONUtil.createJSONForGateway("/account/" + username, "GET");
 
-            Object message = gatewayClient.executeHttpSend(body).get("message");
+            Object message = gatewayClient.send(body).get("message");
             if (message instanceof JSONObject accountJSON) {
                 logger.debug("Authorize the user with email = {}", username);
                 return new ImmutableAccountDetails(accountJSON.getString("password").toCharArray(), accountJSON.getString("email"),

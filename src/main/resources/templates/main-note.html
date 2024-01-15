@@ -14,8 +14,8 @@
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
             crossorigin="anonymous"></script>
 
-    <link href="../static/css/main.css" rel="stylesheet">
-    <link href="../css/main.css" rel="stylesheet">
+    <link href="../static/css/main-note.css" rel="stylesheet">
+    <link href="../css/main-note.css" rel="stylesheet">
 </head>
 <body>
 <nav class="py-2 bg-body-tertiary border-bottom">
@@ -53,36 +53,49 @@
         </form>
     </div>
 </header>
-<div class="row col-9">
-    <div class="container-fluid pb-3 ps-5 pe-3">
-        <div class="d-grid gap-3 pb-3" style="grid-template-columns: 1fr 1fr;">
+
+<div class="row">
+    <div class="col-7">
+        <div class="container-fluid pb-3 ps-5 pe-3">
             <div class="bg-body-tertiary border rounded-3">
-                <div class="ps-3 pt-2">Recent notes</div>
+                <div class="ps-3 pt-2">Latest notes</div>
                 <hr>
-                <!--                <div class="mb-3 ms-3 row col-6 note"><a href="/login" class="nav-link link-body-emphasis px-2 border">NoteName1</a></div>-->
-                <!--                <div class="mb-3 ms-3 row col-6 note"><a href="/login" class="nav-link link-body-emphasis px-2 border">NoteName2</a></div>-->
-                <!--                <div class="mb-3 ms-3 row col-6 note"><a href="/login" class="nav-link link-body-emphasis px-2 border">NoteName3</a></div>-->
-                <!--                <div class="mb-3 ms-3 row col-6 note"><a href="/login" class="nav-link link-body-emphasis px-2 border">NoteName4</a></div>-->
-            </div>
-            <div class="bg-body-tertiary border rounded-3">
-                <div class="ps-3 pt-2">Recent created notes</div>
-                <hr>
+                <div class="mb-3 ms-3 row col-6 border">
+                    <h5>Note1</h5>
+                    <ul>
+                        <li class="nav-link link-body-emphasis">
+                            Short note text
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="bg-body-tertiary border rounded-3">
-            <div class="ps-3 pt-2">Latest features</div>
-            <hr>
-            <div class="mb-3 ms-3 row col-6 border">
-                <h5>Start of development</h5>
-                <ul>
-                    <li class="nav-link link-body-emphasis">An authorization and registration system has been
-                        developed
-                    </li>
-                </ul>
+    </div>
+    <div class="col-4">
+        <div class="container-fluid pb-3 ps-5 pe-3">
+            <div class="bg-body-tertiary border rounded-3">
+                <div class="row ps-3 pt-2">
+                    <div class="col-8">Note window</div>
+                    <div class="col-4">
+                        <a href="#" class="nav-link link-body-emphasis px-2">
+                            <div class="btn btn-bd-primary w-100">
+                                Create Note
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="container-fluid mt-4 mb-3 ms-3 row col-11 border">
+                    <h5>Note1</h5>
+                    <ul>
+                        <li class="nav-link link-body-emphasis">
+                            Short note text
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
