@@ -8,4 +8,4 @@ RUN ./mvnw dependency:resolve
 
 COPY src ./src
 
-CMD ["./mvnw", "-Dspring.profiles.active=DEV", "spring-boot:run"]
+CMD ["./mvnw", "spring-boot:run"]
